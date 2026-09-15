@@ -1,0 +1,63 @@
+#interactive-demo { padding: 42px 20px; }
+.kg-intro { max-width: 1200px; margin: 0 auto 22px; text-align: center; }
+.kg-intro h2 { font-size: 29px; font-weight: 700; color: #162d43; margin-bottom: 9px; }
+.kg-intro p { color: #627486; font-size: 16px; }
+.kg-demo { --ink:#183149; --muted:#64798d; --teal:#087e82; --blue:#3268cc; box-sizing:border-box; max-width:1200px; margin:auto; color:var(--ink); background:#fff; border:1px solid #d9e3ec; border-radius:18px; overflow:hidden; font:15px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; box-shadow:0 10px 40px #2547660a; }
+.kg-demo *, .kg-demo *::before, .kg-demo *::after { box-sizing:border-box; }
+.kg-demo button { font:inherit; cursor:pointer; }
+.kg-demo button:focus-visible, .kg-demo a:focus-visible, .kg-demo summary:focus-visible { outline:3px solid #3268cc; outline-offset:3px; }
+.kg-top { padding:24px 30px 20px; background:#f7fafd; border-bottom:1px solid #e4ebf1; }
+.kg-brand { display:flex; justify-content:space-between; align-items:center; font-size:12px; font-weight:700; letter-spacing:1.5px; color:#48708c; margin-bottom:11px; }
+.kg-brand span:last-child { letter-spacing:.5px; font-weight:500; }
+.kg-question { color:var(--ink); font-size:22px; font-weight:600; line-height:1.4; margin:0; max-width:1050px; }
+.kg-question em { font-style:normal; color:#3268cc; }
+.kg-steps { display:grid; grid-template-columns:repeat(5,1fr); padding:16px 26px; gap:8px; border-bottom:1px solid #e4ebf1; }
+.kg-step { display:flex; align-items:center; gap:9px; text-align:left; background:transparent; border:0; color:var(--muted); border-radius:9px; padding:9px 8px; font-weight:600!important; font-size:13px!important; }
+.kg-step span { display:grid; place-items:center; flex:none; width:25px; height:25px; border-radius:50%; background:#eaf0f5; font-size:12px; }
+.kg-step.done { color:#437576; }
+.kg-step.done span { background:#e5f3f0; }
+.kg-step.active { background:#e8f4f3; color:#07696f; }
+.kg-step.active span { color:white; background:#087e82; }
+.kg-stage-head { display:flex; align-items:center; justify-content:space-between; padding:18px 30px 0; gap:16px; }
+.kg-stage-head h3 { font-size:18px; font-weight:650; margin:0; }
+.kg-count { flex:none; padding:4px 12px; font-size:12px; color:#537185; background:#f0f5f8; border-radius:20px; }
+.kg-graph { display:block; width:100%; height:auto; }
+.kg-graph text { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; }
+.kg-state { border-top:1px solid #e4ebf1; display:grid; grid-template-columns:1fr 1fr 1fr; padding:19px 30px; gap:24px; background:#fbfcfe; min-height:114px; }
+.kg-state h4 { margin:0 0 6px; font-size:11px; letter-spacing:1.5px; color:#698095; font-weight:700; }
+.kg-state p { font-size:15px; margin:0; line-height:1.5; color:var(--ink); }
+.kg-state .kg-action { color:#087277; font-weight:600; }
+.kg-bottom { display:flex; justify-content:space-between; gap:20px; align-items:center; padding:14px 30px; border-top:1px solid #e4ebf1; }
+.kg-legend { display:flex; flex-wrap:wrap; gap:15px; font-size:11px; color:#64798d; }
+.kg-legend span { display:flex; align-items:center; gap:5px; }
+.kg-legend i { width:8px; height:8px; border-radius:50%; background:#3268cc; }
+.kg-legend span:nth-child(2) i { background:#087e82; }
+.kg-legend span:nth-child(3) i { background:#b46d35; }
+.kg-controls { display:flex; align-items:center; gap:6px; }
+.kg-controls button { border:1px solid #dbe5ed; border-radius:7px; color:#36556d; padding:7px 11px; min-height:36px; background:white; font-size:13px; }
+.kg-controls button:disabled { opacity:.4; cursor:default; }
+.kg-controls .kg-play { min-width:86px; background:#163c52; color:#fff; border-color:#163c52; }
+.kg-details { max-width:1200px; margin:15px auto 0; color:#667c8e; font:13px/1.6 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; }
+.kg-details summary { cursor:pointer; color:#375e7a; padding:6px 0; }
+.kg-details pre { padding:16px!important; background:#f3f7fa!important; border-radius:8px; white-space:pre-wrap; overflow-wrap:anywhere; font-size:12px; color:#335068; }
+.kg-resources { display:flex; gap:18px; flex-wrap:wrap; margin-top:12px; }
+.kg-resources a { color:#246989; text-decoration:underline; text-underline-offset:3px; }
+.kg-source-note { max-width:1200px; margin:14px auto 0; font-size:12px; color:#718394; }
+@media(max-width:650px) {
+ #interactive-demo { padding:28px 12px; }
+ .kg-top { padding:19px 18px; }
+ .kg-brand { font-size:10px; letter-spacing:.8px; }
+ .kg-question { font-size:18px; }
+ .kg-steps { padding:12px 9px; gap:2px; }
+ .kg-step { flex-direction:column; text-align:center; gap:5px; font-size:10px!important; padding:7px 2px; }
+ .kg-step span { width:23px; height:23px; }
+ .kg-stage-head { padding:15px 18px 0; align-items:flex-start; gap:8px; }
+ .kg-stage-head h3 { font-size:16px; }
+ .kg-count { font-size:10px; padding:4px 7px; }
+ .kg-state { grid-template-columns:1fr; gap:13px; padding:17px 18px; min-height:0; }
+ .kg-state p { font-size:14px; }
+ .kg-bottom { padding:14px 18px; flex-direction:column; align-items:flex-start; gap:13px; }
+ .kg-controls { width:100%; justify-content:space-between; }
+ .kg-controls button { min-height:42px; }
+ .kg-legend { gap:10px; }
+}

@@ -38,6 +38,7 @@
     pre { background-color: transparent; padding: 0; }
     footer { margin-top: 50px; padding-bottom: 30px; background-color: #fafafa; }
   </style>
+  <link rel="stylesheet" href="./static/trace/trace.css">
 </head>
 <body>
 
@@ -68,6 +69,7 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
+              <span class="link-block"><a href="#interactive-demo" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-play" aria-hidden="true"></i></span><span>Interactive Demo</span></a></span>
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2512.10999" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
@@ -125,6 +127,15 @@
       </div>
     </div>
   </div>
+</section>
+
+<section id="interactive-demo">
+  <div class="kg-intro"><h2>Watch the reasoning unfold</h2><p>One question. Two graph traversals. Six grounded answers.</p></div>
+  <div class="kg-demo" id="kbqa-trace"></div>
+  <noscript><img src="./static/images/kbqa_r1_trace_poster.png" alt="A trace from the topic story through Reggie Pepper to six short-story answers." style="display:block;max-width:100%;margin:auto"><p>Enable JavaScript to step through this example, or download the GIF below.</p></noscript>
+  <details class="kg-details"><summary>Inspect the current step’s action and entity IDs</summary><pre id="kg-raw"></pre></details>
+  <div class="kg-details kg-resources"><a href="./static/images/kbqa_r1_trace_demo.gif" download>Download GIF</a><a href="./static/images/kbqa_r1_trace_demo_hq.gif" download>High-resolution GIF</a><a href="https://arxiv.org/abs/2512.10999" target="_blank" rel="noopener noreferrer">Source paper</a></div>
+  <p class="kg-source-note">Graphical replay of the appendix’s GrailQA example. Narrative and relation labels are shortened for readability; exact actions and IDs are available above. The original story is removed only in the final answer.</p>
 </section>
 
 <section class="section">
@@ -202,5 +213,6 @@
   </div>
 </footer>
 
+<script src="./static/trace/trace.js" defer></script>
 </body>
 </html>
