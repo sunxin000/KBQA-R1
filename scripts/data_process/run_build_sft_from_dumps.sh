@@ -7,15 +7,16 @@ set -euo pipefail
 
 
 
-# Defaults (can override via env or CLI args below)
-INPUT_DIR=${INPUT_DIR:-"/ossfs/workspace/kbqa-r1/data/graphq_rl_dataset_sft/rejection_sampling_graphq_20251031_155131/validation"}
-# INPUT_DIR=${INPUT_DIR:-"/ossfs/workspace/kbqa-r1/data/webqsp_rl_dataset_sft/rejection_sampling_webqsp_20251030_201622/validation"}
-# INPUT_DIR=${INPUT_DIR:-"/ossfs/workspace/kbqa-r1/data/graphq_rl_dataset_sft/rejection_sampling_graphq_20251202_011801/validation"}
-# INPUT_DIR=${INPUT_DIR:-"/ossfs/workspace/kbqa-r1/data/grailqa_rl_dataset_sft/rejection_sampling_grailqa_20251201_051339/validation"}
+# Defaults (can override via environment variables)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT=${REPO_ROOT:-"$(cd "${SCRIPT_DIR}/../.." && pwd)"}
+DATASET_TYPE=${DATASET_TYPE:-webqsp}
+: "${INPUT_DIR:?Set INPUT_DIR to the rejection-sampling validation/rollout dump directory}"
+OUTPUT_FILE=${OUTPUT_FILE:-"${REPO_ROOT}/data/${DATASET_TYPE}_rl_dataset_sft/train_sft.parquet"}
 
-python3 scripts/data_process/build_sft_from_dumps.py \
+python3 "${SCRIPT_DIR}/build_sft_from_dumps.py" \
   --dump_dir "${INPUT_DIR}" \
-  --output_file "/ossfs/workspace/kbqa-r1/data/graphq_rl_dataset_sft/train_sft___.parquet" \
+  --output_file "${OUTPUT_FILE}" \
   --min_mid_f1 0.9 \
   --structure_reward_eq 0.1 \
   --info_role user
